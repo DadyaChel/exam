@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>eto Dadya</h1>
+<p>
+  <a class="btn btn-primary" href="{{ url_for('employee_create') }}">Создать employee</a>
+</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ФИО</th>
+      <th scope="col">Номер телефона</th>
+      <th scope="col">Краткая информация</th>
+      <th scope="col">Опыт</th>
+      <th scope="col">Предпочитаемая должность</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for transactions in employee %}
+    <tr>
+      <th scope="row">{{ transactions.id }}</th>
+      <td>{{ transactions.fullname }}</td>
+      <td>{{ transactions.phone }}</td>
+      <td>{{ transactions.short_info }}</td>
+      <td>{{ transactions.experience }}</td>
+      <td>{{ transactions.preferred_position }}</td>
+      <td>
+        <a class="btn btn-outline" href="{{ url_for('employee_list', id=employee.id) }}">хотити больше?</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

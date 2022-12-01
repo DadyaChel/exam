@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>FIO - {{ employee.fullname }}</h3>
+<p>Phone - {{ employee.phone }}</p>
+<p>Short Info - {{ employee.short_info }}</p>
+<p>Experience - {{ employee.experience }}</p>
+<p>Preferred Position - {{ employee.preferred_position }}</p>
+
+<p>
+    <a class="btn btn-warning" href="{{ url_for('employee_update', id=employee.id) }}">Измэнить</a>
+</p>
+<p>
+    <a class="btn btn-danger" href="{{ url_for('employee_delete', id=employee.id) }}">Удэлить</a>
+</p>
+
+{% endblock content %}

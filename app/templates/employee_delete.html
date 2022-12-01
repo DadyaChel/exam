@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Создать employee</h1>
+
+<form method="POST">
+  <p>Вы действительно хотите удалить </p>
+  <p>ID - {{ employee.id }}</p>
+  <p>FIO - {{ employee.fullname }}</p>
+  <p>Phone - {{ employee.phone }}</p>
+  <p>Short Info - {{ employee.short_info }}</p>
+  <p>Experience - {{ employee.experience }}</p>
+  <p>Preferred Position - {{ employee.preferred_position }}</p>
+  <button type="submit" class="btn btn-danger">Удалить</button>
+
+</form>
+
+{% endblock content %}
